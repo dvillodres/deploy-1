@@ -1,6 +1,7 @@
 ---
 import Town from "../../components/town/Town.astro";
-import {towns, Town as TownType} from "../../data/towns";
+import {towns} from "../../data/towns";
+import type {Town as TownType} from "../../data/towns";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
