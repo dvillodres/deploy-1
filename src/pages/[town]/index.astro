@@ -1,0 +1,20 @@
+---
+import Town from "../../components/town/Town.astro";
+import {towns, Town as TownType} from "../../data/towns";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+    return (towns).map((town: TownType) => {
+        return {
+            params: { town: town.slug },
+            props: { town },
+        };
+    });
+}
+
+const {town} = Astro.props;
+---
+
+<BaseLayout>
+    <Town town={town}/>
+</BaseLayout>
